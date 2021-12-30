@@ -26,6 +26,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::middleware('auth')->group(['prefix' => 'users'], function () {
-    Route::resource('client', ClientController::class);
-});
+// Route::middleware('auth')->group(['prefix' => 'users'], function () {
+//     Route::resource('client', ClientController::class);
+// });
