@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +26,4 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::middleware('auth')->group(['prefix' => 'users'], function () {
-    Route::resource('client', ClientController::class);
-});
+

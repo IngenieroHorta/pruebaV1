@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $table= 'client';
+    protected $table = 'client';
+    protected $with  = 'cities';
     use HasFactory;
+
+    public function cities(){
+        return $this->hasOne(Cities::class, 'code','city');
+    }
 }
