@@ -36,6 +36,11 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
+      
+        $client = new Client();
+        $client->name=$request->name;
+        $client->city=$request->city;
+        $client->save();
         return $request;
     }
 
@@ -47,7 +52,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return $client;
     }
 
     /**
@@ -70,7 +75,8 @@ class ClientController extends Controller
      */
     public function update(UpdateClientRequest $request, Client $client)
     {
-        //
+       return $client->update($request->all());
+        
     }
 
     /**
@@ -81,6 +87,6 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        return $client->delete();
     }
 }

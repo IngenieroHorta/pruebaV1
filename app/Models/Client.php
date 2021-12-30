@@ -9,6 +9,8 @@ class Client extends Model
 {
     protected $table = 'client';
     protected $with  = 'cities';
+    protected $primaryKey = 'code';
+    protected $fillable=['name','city'];
     use HasFactory;
 
     public function cities(){
