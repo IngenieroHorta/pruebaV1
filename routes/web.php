@@ -30,4 +30,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('client', ClientController::class);
 
 
-
