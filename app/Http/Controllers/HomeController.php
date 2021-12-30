@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Client;
+use App\Models\Cities;
 
 class HomeController extends Controller
 {
@@ -11,18 +13,20 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     
     public function index()
     {
-        return view('home');
+        $client = Client::paginate(15);
+        $cities= Cities::all();
+        return view('home', compact('client','cities'));
     }
+    
 }

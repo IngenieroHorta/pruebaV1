@@ -14,6 +14,21 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+
+$(document).on('click', '.new_client', function() {
+
+    let name = document.getElementById("name_client").value;
+    let city = document.getElementById("city").value;
+
+    axios.post('/api/users/client', {
+            name: name,
+            city: city
+        })
+        .then(function(response) {
+            // handle success
+            console.log(response);
+        })
+});
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
